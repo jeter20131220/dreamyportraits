@@ -17,10 +17,10 @@ onMounted(async () => {
 })
 
 const scrollToSection = () => {
-  const target = document.getElementById('sec02')
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth' })
-  }
+    const target = document.getElementById('sec02')
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+    }
 }
 </script>
 
@@ -191,6 +191,7 @@ const scrollToSection = () => {
                         href="https://twitter.com/hollylawly/status/1905744524787548267?ref_src=twsrc%5Etfw">March 28,
                         2025</a>
                 </blockquote>
+            
 
                 <blockquote class="twitter-tweet">
                     <p lang="en" dir="ltr">Someone stop me or I’ll AI my entire photo gallery! <a
