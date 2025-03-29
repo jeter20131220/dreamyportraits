@@ -22,6 +22,84 @@ const scrollToSection = () => {
         target.scrollIntoView({ behavior: 'smooth' })
     }
 }
+
+const submissions = [
+  {
+    // 日本道頓堀 旅遊照 男生
+    image_url: new URL('@/assets/img/3.webp', import.meta.url).href,
+    description: 'A solo walk through Osaka’s lights — still, quiet, and a little magical.',
+    username: '@softwindcat',
+    tags: ['#solojourney', '#cityglow', '#japantrip'],
+    source_url: null,
+  },
+  {
+    // 男生站在花海自然中 年輕
+    image_url: new URL('@/assets/img/1.webp', import.meta.url).href,
+    description: 'The wind was soft, the flowers endless — he looked like he belonged there.',
+    username: '@bluelantern',
+    tags: ['#flowermoment', '#quietlight', '#softboy'],
+    source_url: null,
+  },
+  {
+    // 日本旅遊 嵐山女生背景是山和水
+    image_url: new URL('@/assets/img/2.webp', import.meta.url).href,
+    description: 'In Arashiyama, she paused by the water — and the world paused with her.',
+    username: '@milkclouds',
+    tags: ['#mountainmagic', '#watersoul', '#japanescape'],
+    source_url: null,
+  },
+  {
+    // 阿公 老爺爺背景是樹
+    image_url: new URL('@/assets/img/5.jpg', import.meta.url).href,
+    description: 'He stood under the trees like he’d lived a hundred stories there.',
+    username: '@leafandlight',
+    tags: ['#oldwisdom', '#forestkeeper', '#timepause'],
+    source_url: null,
+  },
+  {
+    // 男生日本旅遊照 難波八阪神社
+    image_url: new URL('@/assets/img/6.jpg', import.meta.url).href,
+    description: 'Right in front of the lion’s mouth — and he was still calm as sky.',
+    username: '@mosswhisper',
+    tags: ['#urbanmystic', '#shrineenergy', '#liongate'],
+    source_url: null,
+  },
+  {
+    // 一家人在婚宴會場的合照
+    image_url: new URL('@/assets/img/7.jpg', import.meta.url).href,
+    description: 'A gentle celebration with the people who hold your history.',
+    username: '@foxinthehills',
+    tags: ['#familyglow', '#gatheringmagic', '#warmlight'],
+    source_url: null,
+  },
+  {
+    // 一家人聚餐的合照 生日聚餐
+    image_url: new URL('@/assets/img/8.jpg', import.meta.url).href,
+    description: 'Laughter, soup, candles — the kind of evening that becomes a memory.',
+    username: '@peachwindow',
+    tags: ['#birthdayharmony', '#dinnerlight', '#foundfamily'],
+    source_url: null,
+  },
+  {
+ // 一個男孩手裡抱著一隻貓
+ image_url: new URL('@/assets/img/9.webp', import.meta.url).href,
+  description: 'He didn’t say much. Just held the cat like it was the only thing that mattered.',
+  username: '@mochiboy',
+  tags: ['#catbond', '#quietafternoon', '#softmoment'],
+  source_url: null,
+  },
+  {
+  // 一隻可愛的小貓咪 趴在沙發上 看鏡頭
+  image_url: new URL('@/assets/img/10.jpg', import.meta.url).href,
+  description: 'She looked at me like she knew a secret — and wouldn’t tell unless I brought snacks.',
+  username: '@couchcatclub',
+  tags: ['#catvibes', '#sofalife', '#dreamyeyes'],
+  source_url: null,
+}
+  
+]
+
+
 </script>
 
 <template>
@@ -102,7 +180,37 @@ const scrollToSection = () => {
         </div>
 
     </div>
+    <section class="w-full bg-[#fdfaf4] py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-center text-3xl font-bold text-[#4f4437] mb-10 drop-shadow-sm">
+                Gallery of Dreamy Moments ✨
+            </h2>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                <div v-for="(item, index) in submissions" :key="index"
+                    class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
+                    <img :src="item.image_url" alt="submitted image" class="rounded-xl mb-4 shadow-md w-full" />
 
+                    <p class="text-[#4f4437] text-sm italic mb-2">
+                        {{ item.description }}
+                    </p>
+
+                    <div v-if="item.tags?.length" class="flex flex-wrap gap-2 mb-3">
+                        <span v-for="(tag, tagIndex) in item.tags" :key="tagIndex"
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">
+                            {{ tag }}
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>{{ item.username || 'Anonymous' }}</span>
+                        <a v-if="item.source_url" :href="item.source_url" target="_blank" class="underline">
+                            View ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="sec02" class="w-full mx-auto p-8 rounded-t-2xl shadow-lg bg-[#f7f5eb]">
 
         <div class="w-10/12 mx-auto">
@@ -113,6 +221,15 @@ const scrollToSection = () => {
                 You’re Not Alone — Everyone’s Getting Animated 💫
             </h2>
             <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                <!-- <div
+                    class="bg-[#fdfaf4] border border-[#d4cbb4] rounded-3xl shadow-md p-4 space-y-3 transition hover:scale-[1.02]">
+                    <img src="../assets/img/20250328_1709_Ghibli Style Art_remix_01jqe07abfew48zv0ybc2rcrr9.webp" class="rounded-xl shadow" />
+                    <p class="text-[#4f4437] text-sm italic">"woke up feeling ghibli w/ a hint of desi 🤍"</p>
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>@username</span>
+                        <span>March 27, 2025</span>
+                    </div>
+                </div> -->
                 <blockquote class="twitter-tweet">
                     <p lang="en" dir="ltr">woke up feeling ghibli w/ a hint of desi 🤍 <a
                             href="https://t.co/Vzn70VWp1h">pic.twitter.com/Vzn70VWp1h</a></p>&mdash; Vas | Capx AI
@@ -191,7 +308,7 @@ const scrollToSection = () => {
                         href="https://twitter.com/hollylawly/status/1905744524787548267?ref_src=twsrc%5Etfw">March 28,
                         2025</a>
                 </blockquote>
-            
+
 
                 <blockquote class="twitter-tweet">
                     <p lang="en" dir="ltr">Someone stop me or I’ll AI my entire photo gallery! <a
@@ -249,6 +366,95 @@ const scrollToSection = () => {
 
 
     </section>
+
+    <section class="w-full bg-[#fdfaf4] py-12 px-4 hidden">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-center text-3xl font-bold text-[#4f4437] mb-10 drop-shadow-sm">
+                Gallery of Dreamy Moments ✨
+            </h2>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                <!-- Card Start -->
+                <div
+                    class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
+                    <img src="../assets/img/20250328_1709_Ghibli Style Art_remix_01jqe07abfew48zv0ybc2rcrr9.webp"
+                        alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
+                    <p class="text-[#4f4437] text-sm italic mb-2">
+                        "woke up feeling ghibli w/ a hint of desi 🤍"
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">#softsky</span>
+                        <span
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">#ghiblistyle</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>@VasaviBhatia</span>
+                        <a href="https://twitter.com/VasaviBhatia/status/1905206592741441997" target="_blank"
+                            class="underline">View ↗</a>
+                    </div>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card 2 -->
+                <div
+                    class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
+                    <img src="../assets/img/20250328_1730_Ghibli Style Art_remix_01jqe1dvvqe728x0cbh11s8ezz.webp"
+                        alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
+                    <p class="text-[#4f4437] text-sm italic mb-2">
+                        "🥺❤️"
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">#emotional</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>@urvashiicodes</span>
+                        <a href="https://twitter.com/urvashiicodes/status/1905281543117123750" target="_blank"
+                            class="underline">View ↗</a>
+                    </div>
+                </div>
+
+                <div
+                    class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
+                    <img src="../assets/img/20250329_1521_Ghibli Style Downtown_remix_01jqgcdkkgfe2tda8d6y1ecghy.webp"
+                        alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
+                    <p class="text-[#4f4437] text-sm italic mb-2">
+                        "🥺❤️"
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">#emotional</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>@urvashiicodes</span>
+                        <a href="https://twitter.com/urvashiicodes/status/1905281543117123750" target="_blank"
+                            class="underline">View ↗</a>
+                    </div>
+                </div>
+
+                <div
+                    class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
+                    <img src="../assets/img/20250328_1730_Ghibli Style Art_remix_01jqe1dvvqe728x0cbh11s8ezz.webp"
+                        alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
+                    <p class="text-[#4f4437] text-sm italic mb-2">
+                        "🥺❤️"
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span
+                            class="bg-[#e8dfcc] text-[#6d5844] text-xs font-medium px-3 py-1 rounded-full">#emotional</span>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#998e7b]">
+                        <span>@urvashiicodes</span>
+                        <a href="https://twitter.com/urvashiicodes/status/1905281543117123750" target="_blank"
+                            class="underline">View ↗</a>
+                    </div>
+                </div>
+
+                <!-- Add more cards as needed -->
+            </div>
+        </div>
+    </section>
+ 
     <footer class="bg-[#d9e1dc] text-[#3d4b49] py-10  shadow-inner rounded-b-2xl">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
 

@@ -10,6 +10,8 @@ const router = useRouter()
 const imageOrTweet = ref('')
 const tags = ref('')
 const description = ref('')
+const username = ref('')
+
 const agree = ref(false)
 const show = ref(false)
 
@@ -44,6 +46,7 @@ const submitForm = async () => {
     tags: tags.value.split(' ').filter(tag => tag.startsWith('#')),
     description: description.value,
     agree: agree.value,
+    username:username.value
   }
 
   try {
@@ -75,6 +78,13 @@ const submitForm = async () => {
             <h2 class="text-3xl font-semibold text-[#4a3f34] mb-6 text-center">Submit Your Dreamy Portrait</h2>
 
             <form class="space-y-6">
+                <div>
+                    <label class="block text-[#5d4e41] font-medium mb-1" for="imageOrTweet"> Display Name (optional)</label>
+                    <input type="text" id="imageOrTweet" name="imageOrTweet" v-model="username"
+                      placeholder="e.g. @dreamyfox or Natsuko 🌿"
+                        class="w-full bg-[#f3ede4] border border-[#c6b8a3] text-[#3d2e25] rounded-lg px-4 py-3 placeholder:text-[#b7a69a] focus:outline-none focus:ring-2 focus:ring-[#a08972]" />
+                </div>
+
                 <!-- 圖片或推文連結 -->
                 <div>
                     <label class="block text-[#5d4e41] font-medium mb-1" for="imageOrTweet">Image Upload or Tweet
