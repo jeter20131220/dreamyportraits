@@ -376,7 +376,7 @@ const submissions = [
                 <!-- Card Start -->
                 <div
                     class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
-                    <img src="../assets/img/20250328_1709_Ghibli Style Art_remix_01jqe07abfew48zv0ybc2rcrr9.webp"
+                    <img src="../assets/img/1.webp"
                         alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
                     <p class="text-[#4f4437] text-sm italic mb-2">
                         "woke up feeling ghibli w/ a hint of desi 🤍"
@@ -398,7 +398,7 @@ const submissions = [
                 <!-- Card 2 -->
                 <div
                     class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
-                    <img src="../assets/img/20250328_1730_Ghibli Style Art_remix_01jqe1dvvqe728x0cbh11s8ezz.webp"
+                    <img src="../assets/img/2.webp"
                         alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
                     <p class="text-[#4f4437] text-sm italic mb-2">
                         "🥺❤️"
@@ -416,7 +416,7 @@ const submissions = [
 
                 <div
                     class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
-                    <img src="../assets/img/20250329_1521_Ghibli Style Downtown_remix_01jqgcdkkgfe2tda8d6y1ecghy.webp"
+                    <img src="../assets/img/3.webp"
                         alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
                     <p class="text-[#4f4437] text-sm italic mb-2">
                         "🥺❤️"
@@ -434,7 +434,7 @@ const submissions = [
 
                 <div
                     class="break-inside-avoid bg-[#f8f5e9] border border-[#d4cbb4] rounded-3xl shadow-xl p-4 transition-transform hover:scale-[1.015]">
-                    <img src="../assets/img/20250328_1730_Ghibli Style Art_remix_01jqe1dvvqe728x0cbh11s8ezz.webp"
+                    <img src="../assets/img/2.webp"
                         alt="tweet image" class="rounded-xl mb-4 shadow-md w-full" />
                     <p class="text-[#4f4437] text-sm italic mb-2">
                         "🥺❤️"
