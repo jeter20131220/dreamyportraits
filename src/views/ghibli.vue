@@ -73,13 +73,13 @@ const submissions = [
     source_url: null,
   },
   {
-    // 一家人聚餐的合照 生日聚餐
-    image_url: new URL('@/assets/img/8.jpg', import.meta.url).href,
-    description: 'Laughter, soup, candles — the kind of evening that becomes a memory.',
-    username: '@peachwindow',
-    tags: ['#birthdayharmony', '#dinnerlight', '#foundfamily'],
-    source_url: null,
-  },
+  // 一家人聚餐的合照 生日聚餐
+  image_url: new URL('@/assets/img/8.jpg', import.meta.url).href,
+  description: 'Sunlight, chatter, clinking dishes — a birthday meal wrapped in warmth.',
+  username: '@peachwindow',
+  tags: ['#birthdaylunch', '#familysunday', '#quietjoy'],
+  source_url: null,
+},
   {
  // 一個男孩手裡抱著一隻貓
  image_url: new URL('@/assets/img/9.webp', import.meta.url).href,
