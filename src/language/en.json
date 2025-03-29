@@ -1,0 +1,28 @@
+{
+    "title": "One-Click AI Virtual Assistant – Easily Embed on Your Website",
+    "sibtitle": "Embed a lifelike AI virtual assistant on your website with multilingual voice and text chat capabilities. Deploy instantly and enhance your customer experience.",
+    "Feature": "Enhance Service Quality and Efficiency",
+
+    "Feature01": "24/7 Instant Response now",
+    "Feature01-1": "AI customer service operates around the clock, ensuring users receive assistance anytime with real-time responses.",
+
+    "Feature02": "Lifelike Virtual Agent",
+    "Feature02-1": "With natural expressions and tone, the virtual agent creates a more engaging and friendly interaction, increasing user trust and engagement.",
+
+    "Feature03": "Reduced Labor Costs",
+    "Feature03-1": "AI handles common inquiries automatically, reducing workload and allowing professionals to focus on high-value services, improving efficiency.",
+
+    "customer_hide": "AI Customer Service",
+    "location_guide": "Location Guide",
+    "service_information": "Service Information",
+    "ar_tour": "AR navigation",
+    "select_location": "Please select you location for AR navigation",
+    "question": "Click me to ask a question",
+    "qr_code_scan_prompt": "Please scan QR Code to obtain current location",
+    "tap_to_start_scan": "Tap to start scanning",
+    "current_location": "Current location",
+    "select_navigation_location": "Please select navigation location",
+    "system_construction": "The system is under construction. <br> The voice input function is disabled.",
+    "tap_to_record": "Tap to record",
+    "close": "Close"
+  }

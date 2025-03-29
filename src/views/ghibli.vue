@@ -1,0 +1,295 @@
+<script setup>
+import { ref, onMounted, nextTick } from 'vue';
+
+
+const tweetLinks = [
+    'https://x.com/urvashiicodes/status/1905281543117123750',
+    'https://x.com/khushbooverma_/status/1905650364356936020',
+    'https://x.com/Shivangi_scene/status/1905599702072005013',
+    // 加更多推文連結
+]
+
+onMounted(async () => {
+    await nextTick()
+    if (window.twttr && window.twttr.widgets) {
+        window.twttr.widgets.load()
+    }
+})
+
+const scrollToSection = () => {
+  const target = document.getElementById('sec02')
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+</script>
+
+<template>
+    <div id="memes">
+        <div class="mx-auto max-w-4xl pt-32 pb-10 sm:pt-48 lg:pt-40">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                <!-- <div
+                    class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span
+                            class="absolute inset-0" aria-hidden="true" />Read more <span
+                            aria-hidden="true">&rarr;</span></a>
+                </div> -->
+            </div>
+            <!-- <div class="text-center">
+                <h1 class="text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+                    Turn Your Photo into a Dreamy Anime World ✨
+                </h1>
+                <p class="mt-8 text-white text-lg font-medium text-gray-500 sm:text-xl/8">
+                    Upload your photo and watch it transform into a soft, storybook-style illustration inspired by
+                    iconic hand-drawn films.
+                </p>
+            </div> -->
+            <div class="text-center">
+                <!-- <h1
+                    class="text-balance text-5xl font-semibold tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-6xl">
+                    Turn Your Photo into a Dreamy Anime World ✨
+                </h1> -->
+                <h1
+                    class="text-balance text-3xl sm:text-6xl font-semibold tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+                    A dreamy, hand-drawn world is taking over the internet ✨
+                </h1>
+
+                <p
+                    class="mt-6 text-white text-lg sm:text-2xl font-medium text-gray-500 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                    Inspired by timeless animation, soft skies, and nature’s magic <br>— these portraits feel like
+                    stepping
+                    into a story. Come be part of it.
+                </p>
+            </div>
+
+        </div>
+        <div class="mx-auto max-w-4xl">
+            <div class="flex flex-col h-full">
+                <!-- <label for="cover-photo" class="block text-sm/6 font-medium text-gray-900">Template Img</label> -->
+                <div
+                    class="mt-2 flex justify-center flex-1 rounded-lg border-2 border-[#76967f] px-6 py-10 bg-[#c6d9c3] bg-opacity-80 hidden">
+                    <div class="text-center">
+                        <PhotoIcon class="mx-auto size-12 text-gray-300" aria-hidden="true"></PhotoIcon>
+                        <div class="mt-4 flex text-sm/6 text-gray-600">
+                            <label for="file-upload"
+                                class="relative cursor-pointer rounded-md bg-[#e8e6bc] font-semibold text-[#2f5169]  focus-within:ring-offset-2 hover:text-indigo-500 px-5">
+                                <span>Upload a file</span>
+                                <input @change="handleFileChange" id="file-upload" name="file-upload" type="file"
+                                    class="sr-only" />
+                            </label>
+                            <p class="pl-1">or drag and drop</p>
+                        </div>
+                        <p class="text-xs/5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    </div>
+                </div>
+                <!-- <div id="geminiResponse">{{ geminiResponse }}</div>  -->
+                <div class="flex justify-center mt-5">
+                    <router-link to="/form">
+                        <button
+                            class="cursor-pointer inline-block bg-[#e3dfb3] hover:bg-[#89b0a3] text-[#2d4c65] text-lg font-semibold py-3 px-6 rounded-full transition duration-300">
+                            Submit Your Portrait
+                        </button>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+        <!-- ↓ Scroll Down Arrow (Ghibli-inspired) ↓ -->
+        <div class="flex justify-center mt-10 animate-bounce text-[#e3dfb3] cursor-pointer" @click="scrollToSection">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-16 h-16 drop-shadow-md">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12.75L12 20.25L4.5 12.75" />
+            </svg>
+        </div>
+
+    </div>
+
+    <section id="sec02" class="w-full mx-auto p-8 rounded-t-2xl shadow-lg bg-[#f7f5eb]">
+
+        <div class="w-10/12 mx-auto">
+            <!-- <h2 class="text-3xl sm:text-4xl font-bold text-[#3b4c4b] text-center mb-10 drop-shadow">
+                A dreamy, hand-drawn world is taking over the internet<br> — come join the party ✨
+            </h2> -->
+            <h2 class="text-3xl sm:text-4xl font-bold text-[#3b4c4b] text-center mb-10 drop-shadow">
+                You’re Not Alone — Everyone’s Getting Animated 💫
+            </h2>
+            <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">woke up feeling ghibli w/ a hint of desi 🤍 <a
+                            href="https://t.co/Vzn70VWp1h">pic.twitter.com/Vzn70VWp1h</a></p>&mdash; Vas | Capx AI
+                    (@VasaviBhatia) <a
+                        href="https://twitter.com/VasaviBhatia/status/1905206592741441997?ref_src=twsrc%5Etfw">March 27,
+                        2025</a>
+                </blockquote>
+                <blockquote class="twitter-tweet">
+                    <p lang="qme" dir="ltr">🥹🤌🏻 <a href="https://t.co/LWx4byCice">pic.twitter.com/LWx4byCice</a></p>
+                    &mdash;
+                    Srishti shukla (@dusky_drone) <a
+                        href="https://twitter.com/dusky_drone/status/1905479249731178975?ref_src=twsrc%5Etfw">March 28,
+                        2025</a>
+                </blockquote>
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">fine, here is mine and simba :b (I loved this) <a
+                            href="https://t.co/51Bar3jVjC">pic.twitter.com/51Bar3jVjC</a></p>&mdash; Shivangi
+                    (@Shivangi_scene) <a
+                        href="https://twitter.com/Shivangi_scene/status/1905599702072005013?ref_src=twsrc%5Etfw">March
+                        28, 2025</a>
+                </blockquote>
+
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Late to the ghibli party? 🙈 <a
+                            href="https://t.co/KjVNz1zTqC">pic.twitter.com/KjVNz1zTqC</a></p>&mdash; Khushboo Verma
+                    (@khushbooverma_) <a
+                        href="https://twitter.com/khushbooverma_/status/1905650364356936020?ref_src=twsrc%5Etfw">March
+                        28, 2025</a>
+                </blockquote>
+                <blockquote class="twitter-tweet">
+                    <p lang="qme" dir="ltr">🥺❤️ <a href="https://t.co/lDU7MtcbIm">pic.twitter.com/lDU7MtcbIm</a></p>
+                    &mdash;
+                    Urvashi 🦢 (@urvashiicodes) <a
+                        href="https://twitter.com/urvashiicodes/status/1905281543117123750?ref_src=twsrc%5Etfw">March
+                        27,
+                        2025</a>
+                </blockquote>
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">best use of 23$ <a
+                            href="https://t.co/ue8WzrstTJ">pic.twitter.com/ue8WzrstTJ</a></p>&mdash; khushi
+                    (@meinnhibataungi) <a
+                        href="https://twitter.com/meinnhibataungi/status/1905330719620301184?ref_src=twsrc%5Etfw">March
+                        27, 2025</a>
+                </blockquote>
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Wow!!!! 🥳 I finally got my first piece of Ghibli art! Thanks <a
+                            href="https://twitter.com/pseudokid?ref_src=twsrc%5Etfw">@pseudokid</a> <a
+                            href="https://t.co/AfYaS6d31k">pic.twitter.com/AfYaS6d31k</a></p>&mdash; Lis Law
+                    (@szewailaw_lis) <a
+                        href="https://twitter.com/szewailaw_lis/status/1905313989120458815?ref_src=twsrc%5Etfw">March
+                        27, 2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Kapehe is back from the Vercel offsite!<br><br>Date night to our first
+                        Colorado hockey game! <a href="https://t.co/kiYIXcxbzV">pic.twitter.com/kiYIXcxbzV</a></p>
+                    &mdash; Chris Sev (@chris__sev) <a
+                        href="https://twitter.com/chris__sev/status/1905486565062717504?ref_src=twsrc%5Etfw">March 28,
+                        2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">one with love of my life ❤️ <a
+                            href="https://t.co/NZJtWVlmUZ">pic.twitter.com/NZJtWVlmUZ</a></p>&mdash; Rishab Kumar
+                    (@rishabincloud) <a
+                        href="https://twitter.com/rishabincloud/status/1905266134854545644?ref_src=twsrc%5Etfw">March
+                        27, 2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">See you in London next week at my first ever KubeCon! I&#39;ll bring the
+                        IOPS. <a href="https://t.co/T6tQSZqyNQ">https://t.co/T6tQSZqyNQ</a> <a
+                            href="https://t.co/jsv6S04NKF">pic.twitter.com/jsv6S04NKF</a></p>&mdash; Holly Guevara
+                    (@hollylawly) <a
+                        href="https://twitter.com/hollylawly/status/1905744524787548267?ref_src=twsrc%5Etfw">March 28,
+                        2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Someone stop me or I’ll AI my entire photo gallery! <a
+                            href="https://t.co/1NtMWdGhqV">pic.twitter.com/1NtMWdGhqV</a></p>&mdash; Varsha Saha
+                    (@saha_varsha) <a
+                        href="https://twitter.com/saha_varsha/status/1905487444621070391?ref_src=twsrc%5Etfw">March 28,
+                        2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">This would be me in a different world <a
+                            href="https://t.co/M5U1K7oYWt">pic.twitter.com/M5U1K7oYWt</a></p>&mdash; Alena Tikhomirova
+                    (@Alennushkaa) <a
+                        href="https://twitter.com/Alennushkaa/status/1905646557854044306?ref_src=twsrc%5Etfw">March 28,
+                        2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Close enough <a
+                            href="https://twitter.com/hashtag/studioghibli?src=hash&amp;ref_src=twsrc%5Etfw">#studioghibli</a>
+                        <a href="https://t.co/xZYHLIkEwt">pic.twitter.com/xZYHLIkEwt</a>
+                    </p>&mdash; Girl loves coding
+                    👩‍💻 (@girllovescoding) <a
+                        href="https://twitter.com/girllovescoding/status/1905638724932673756?ref_src=twsrc%5Etfw">March
+                        28, 2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="zh" dir="ltr">人生终究还是免不了脱俗，我也来生成一张 <a
+                            href="https://t.co/1Gdmde88Sk">pic.twitter.com/1Gdmde88Sk</a></p>&mdash; 萃猫警长
+                    (@chimaosheriff) <a
+                        href="https://twitter.com/chimaosheriff/status/1905127985465704690?ref_src=twsrc%5Etfw">March
+                        27, 2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Ghibli Sweeney <a
+                            href="https://t.co/jxbmsL5O5x">pic.twitter.com/jxbmsL5O5x</a></p>&mdash; Serf
+                    (@TheRoyalSerf) <a
+                        href="https://twitter.com/TheRoyalSerf/status/1904973085574566341?ref_src=twsrc%5Etfw">March 26,
+                        2025</a>
+                </blockquote>
+
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">You do not sell your Bitcoin. <a
+                            href="https://t.co/PDw8CP0apn">pic.twitter.com/PDw8CP0apn</a></p>&mdash; Michael Saylor⚡️
+                    (@saylor) <a href="https://twitter.com/saylor/status/1905233338782134525?ref_src=twsrc%5Etfw">March
+                        27, 2025</a>
+                </blockquote>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+    <footer class="bg-[#d9e1dc] text-[#3d4b49] py-10  shadow-inner rounded-b-2xl">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
+
+            <!-- 左邊 Logo 或標題 -->
+            <div class="text-xl font-semibold tracking-tight">
+                Dreamy Portraits 🌿
+            </div>
+
+            <!-- 社群連結 -->
+            <div class="flex gap-5 text-2xl">
+                <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-[#1d9bf0] transition">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/yourhandle" target="_blank" class="hover:text-pink-500 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:your@email.com" class="hover:text-green-600 transition">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <!-- Footer 字 -->
+            <p class="text-sm text-gray-600 text-center sm:text-right">
+                © 2025 Dreamy Portraits. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+</template>
+
+<style lang="scss">
+#memes {
+    background-image: url(../assets/img/memes.webp);
+    /* 你可以換成自己的背景圖 */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+    @media (max-width: 767px) {
+        height: 80vh;
+    }
+
+}
+</style>
