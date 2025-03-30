@@ -23,7 +23,7 @@ const scrollToSection = () => {
     }
 }
 
-const submissions = [
+const originalSubmissions = [
   {
     // 日本道頓堀 旅遊照 男生
     image_url: new URL('@/assets/img/3.webp', import.meta.url).href,
@@ -95,9 +95,79 @@ const submissions = [
   username: '@couchcatclub',
   tags: ['#catvibes', '#sofalife', '#dreamyeyes'],
   source_url: null,
-}
+},
+{
+  // 一個金髮女孩在自己家拍照
+  image_url: new URL('@/assets/img/11.webp', import.meta.url).href,
+  description: 'I didn’t dress up for anything. Just wanted to capture how the light felt that day.',
+  username: '@sunwindowgirl',
+  tags: ['#homeselfie', '#quietlight', '#softgold'],
+  source_url: null,
+},
+{
+  // 一紅髮的外國女生 在自己房間拍照
+  image_url: new URL('@/assets/img/12.webp', import.meta.url).href,
+  description: 'Sometimes the mess is part of the magic.',
+  username: '@gingerroom',
+  tags: ['#indoorvibes', '#dreamroom', '#selfportrait'],
+  source_url: null,
+},
+{
+  // 一位在日本旅遊的少年 在日本馬路上 一邊走路一邊滑手機
+  image_url: new URL('@/assets/img/13.webp', import.meta.url).href,
+  description: 'Lost in Tokyo, not in a bad way.',
+  username: '@cloudywalker',
+  tags: ['#tokyotrip', '#everydaymagic', '#walkandwonder'],
+  source_url: null,
+},
+{
+  // 一對夫婦在日本櫻花樹下自拍
+  image_url: new URL('@/assets/img/14.jpg', import.meta.url).href,
+  description: 'The sakura fell like we planned it.',
+  username: '@hanamihearts',
+  tags: ['#sakurastory', '#together', '#cherryblossoms'],
+  source_url: null,
+},
+{
+  // 一位亞洲的長髮女孩靠在樹上微笑
+  image_url: new URL('@/assets/img/15.webp', import.meta.url).href,
+  description: 'The tree didn’t say anything, but I felt like it was listening.',
+  username: '@treewhisper',
+  tags: ['#forestpause', '#softsmile', '#stillness'],
+  source_url: null,
+},
+{
+  // 一對看起來慈祥的老爺爺老奶奶 據我所知老爺爺已經離開人世
+  image_url: new URL('@/assets/img/16.jpg', import.meta.url).href,
+  description: 'He’s gone now, but this is how I remember him — laughing beside her.',
+  username: '@quietlegacy',
+  tags: ['#forevermoment', '#familystory', '#timeless'],
+  source_url: null,
+},
+{
+  // 一個男孩在自己家裡對著鏡頭笑得非常開心
+  image_url: new URL('@/assets/img/17.webp', import.meta.url).href,
+  description: 'Mom said “smile like it’s your story” — so I did.',
+  username: '@sunnykiddo',
+  tags: ['#purejoy', '#homelight', '#smilebig'],
+  source_url: null,
+},
+
   
 ]
+
+// Fisher–Yates 洗牌演算法
+function shuffleArray(array) {
+  const copy = [...array]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
+// 傳給 v-for 用的資料（每次載入都不同順序）
+const submissions = ref(shuffleArray(originalSubmissions))
 
 
 </script>
@@ -180,6 +250,19 @@ const submissions = [
         </div>
 
     </div>
+
+   <!-- Optional: Text-only submission callout -->
+   <div class="mt-16 bg-[#f8f1e4] border border-[#d4cbb4] rounded-3xl p-6 text-center shadow-md hidden">
+      <p class="text-[#5e4a3c] text-base italic max-w-2xl mx-auto">
+        “Not ready to share a photo? You can still submit a line of text — a moment, a memory, a dream.”
+      </p>
+      <router-link to="/form">
+        <button class="mt-4 bg-[#e0d6c4] hover:bg-[#cbbca8] text-[#4a3f34] font-semibold px-5 py-2 rounded-full text-sm shadow-sm transition">
+          Submit a Thought ✍️
+        </button>
+      </router-link>
+    </div>
+
     <section class="w-full bg-[#fdfaf4] py-12 px-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-center text-3xl font-bold text-[#4f4437] mb-10 drop-shadow-sm">
@@ -454,6 +537,8 @@ const submissions = [
             </div>
         </div>
     </section>
+
+    
  
     <footer class="bg-[#d9e1dc] text-[#3d4b49] py-10  shadow-inner rounded-b-2xl">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
